@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos | Festou Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="balloons-decoration">
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+            <div class="balloon"></div>
+        </div>
+        <div class="logo-text">
+            <span>F</span><span>E</span><span>S</span><span>T</span><span>O</span><span>U</span>
+        </div>
+        <span class="store-tag">STORE</span>
+    </header>
+
+    <nav>
+        <div class="nav-list">
+            <div class="nav-item">
+                <a href="index.html" class="nav-link">Início</a>
+            </div>
+            <div class="nav-item">
+                <a href="produtos.html" class="nav-link">Produtos</a>
+            </div>
+            <div class="nav-item">
+                <a href="#sobre" class="nav-link">Sobre Nós</a>
+            </div>
+            <div class="nav-item">
+                <a href="#contato" class="nav-link">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="products-section">
+        <div class="section-title">
+            <h2>Nossos <mark>Achadinhos</mark></h2>
+            <p>Os melhores produtos para sua festa selecionados com carinho.</p>
+        </div>
+
+        <div class="product-grid">
+            <!-- Produto 1 -->
+            <div class="product-card" id="prod-1">
+                <div class="product-carousel">
+                    <button class="carousel-btn prev" onclick="moveCarousel('prod-1', -1, event)">&#10094;</button>
+                    <div class="carousel-container" onclick="openModal('prod-1')">
+                        <img src="inflador balao.webp" alt="Inflador Elétrico de Balões 1">
+                        <img src="inflador balao2.webp" alt="Inflador Elétrico de Balões 2">
+                    </div>
+                    <button class="carousel-btn next" onclick="moveCarousel('prod-1', 1, event)">&#10095;</button>
+                </div>
+                <div class="product-info">
+                    <h3>Inflador Elétrico de Balões</h3>
+                    <p>Inflador Elétrico de Balões Bexigas 110v/220v Festa Ornamentação Bomba de Encher Bola de Festas，com 2 Bicos，Bomba infláv</p>
+                </div>
+                <div class="product-action">
+                    <div class="price">R$ 149,90</div>
+                    <a href="#" class="btn-shopee">Ver na Shopee</a>
+                </div>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="product-card" id="prod-2">
+                <div class="product-carousel">
+                    <button class="carousel-btn prev" onclick="moveCarousel('prod-2', -1, event)">&#10094;</button>
+                    <div class="carousel-container" onclick="openModal('prod-2')">
+                        <img src="https://via.placeholder.com/150" alt="Cortina Metalizada">
+                        <img src="https://via.placeholder.com/150/ff477e" alt="Cortina Metalizada 2">
+                    </div>
+                    <button class="carousel-btn next" onclick="moveCarousel('prod-2', 1, event)">&#10095;</button>
+                </div>
+                <div class="product-info">
+                    <h3>Cortina Metalizada</h3>
+                    <p>Ideal para painéis fotográficos e decoração de fundo. Tamanho 1x2 metros, disponível em várias cores metálicas vibrantes.</p>
+                </div>
+                <div class="product-action">
+                    <div class="price">R$ 12,50</div>
+                    <a href="#" class="btn-shopee">Ver na Shopee</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modal para zoom da imagem -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <button class="modal-btn prev" onclick="moveModalCarousel(-1)">&#10094;</button>
+            <img id="modalImg" src="" alt="Zoom do Produto">
+            <button class="modal-btn next" onclick="moveModalCarousel(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const carouselStates = {};
+        let currentModalProductId = null;
+
+        function moveCarousel(productId, direction, event) {
+            if (event) event.stopPropagation();
+            
+            if (!carouselStates[productId]) {
+                carouselStates[productId] = 0;
+            }
+
+            const card = document.getElementById(productId);
+            const container = card.querySelector('.carousel-container');
+            const images = container.querySelectorAll('img');
+            const totalImages = images.length;
+
+            if (totalImages <= 1 && direction !== 0) return;
+
+            carouselStates[productId] = (carouselStates[productId] + direction + totalImages) % totalImages;
+            
+            const offset = carouselStates[productId] * 150;
+            container.style.transform = `translateX(-${offset}px)`;
+        }
+
+        function openModal(productId) {
+            currentModalProductId = productId;
+            const card = document.getElementById(productId);
+            const container = card.querySelector('.carousel-container');
+            const images = container.querySelectorAll('img');
+            
+            if (!carouselStates[productId]) carouselStates[productId] = 0;
+            
+            const currentImgSrc = images[carouselStates[productId]].src;
+            document.getElementById('modalImg').src = currentImgSrc;
+            document.getElementById('imageModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+            currentModalProductId = null;
+        }
+
+        function moveModalCarousel(direction) {
+            if (!currentModalProductId) return;
+            
+            moveCarousel(currentModalProductId, direction);
+            
+            const card = document.getElementById(currentModalProductId);
+            const container = card.querySelector('.carousel-container');
+            const images = container.querySelectorAll('img');
+            document.getElementById('modalImg').src = images[carouselStates[currentModalProductId]].src;
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Fechar modal ao apertar a tecla ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
