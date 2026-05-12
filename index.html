@@ -3,53 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Festou Store | A sua loja de festas</title>
+    <title>NoDesconto Store | A sua loja de ofertas</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" type="image/png" href="festou.png">
+    <link rel="icon" type="image/png" href="NoDesconto.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <div class="balloons-decoration">
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-        </div>
-        <div class="logo-text">
-            <span>F</span><span>E</span><span>S</span><span>T</span><span>O</span><span>U</span>
-        </div>
-        <span class="store-tag">STORE</span>
-    </header>
-
     <nav>
-        <div class="nav-list">
-            <div class="nav-item">
-                <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Início</a>
+        <div class="nav-container">
+            <div class="logo-container">
+                <a href="index.html" class="logo-text-link">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="logo-text-wrapper">
+                        NODESCONTO<span>STORE</span>
+                    </div>
+                </a>
             </div>
-            <div class="nav-item">
-                <a href="produtos.html" class="nav-link"><i class="fa-solid fa-magnifying-glass"></i> Produtos</a>
-            </div>
-            <div class="nav-item">
-                <a href="#sobre" class="nav-link"><i class="fa-solid fa-user"></i> Sobre Nós</a>
-            </div>
-            <div class="nav-item">
-                <a href="#contato" class="nav-link"><i class="fa-solid fa-phone"></i> Contato</a>
+
+            <div class="nav-options">
+                <button class="mobile-menu-btn" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="nav-list" id="navlist">
+                    <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Início</a>
+                    <a href="produtos.html" class="nav-link"><i class="fa-solid fa-magnifying-glass"></i> Produtos</a>
+                    <a href="#sobre" class="nav-link"><i class="fa-solid fa-user"></i> Sobre</a>
+                    <a href="#contato" class="nav-link"><i class="fa-solid fa-phone"></i> Contato</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <section class="impact-banner">
-        <div class="impact-container">
-            <h2>Na <mark>Festou Store</mark> você encontra produtos de festas diretamente da <shp> Shopee </shp> com o melhor <br> custo-benefício!</h2>
-            <p>Economize tempo e garanta qualidade com os produtos selecionados por nós.</p>
-            <a href="produtos.html" class="cta-button">Explorar</a>
-        </div>
-    </section>
+    <div class="gradient-strip"></div>
 
+    <main>
+        <section class="impact-banner">
+            <div class="impact-container">
+                <div class="impact-content">
+                    <div class="trust-badge">
+                        <i class="fa-solid fa-circle-check"></i> Curadoria Verificada 2024
+                    </div>
+                    <h2>As melhores ofertas estão na <mark>NoDesconto</mark></h2>
+                    <p>O seu guia definitivo de achadinhos da Shopee. Selecionamos produtos que unem qualidade extrema e o preço que você procura.</p>
+                    <a href="produtos.html" class="cta-button">Ver Achadinhos de Hoje <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="impact-visual">
+                    <div class="visual-circle"></div>
+                    <div class="floating-card" style="padding: 40px; border-radius: 50%;">
+                        <i class="fa-solid fa-cart-shopping" style="color: var(--laranja-principal); font-size: 4rem;"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fa-solid fa-wand-sparkles"></i></div>
+                    <h3>Curadoria Especial de Achadinhos</h3>
+                    <p>Nossa equipe vasculha a Shopee diariamente para encontrar produtos com avaliações reais acima de 4.8 estrelas. Economize tempo com quem filtra o que realmente vale a pena.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fa-solid fa-piggy-bank"></i></div>
+                    <h3>Economia Real</h3>
+                    <p>Foco total em custo-benefício para seu bolso sem abrir mão da qualidade.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Compra Segura</h3>
+                    <p>Garantia e segurança total da plataforma Shopee em todos os links indicados.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="trending-section">
+            <div class="section-header">
+                <h2>Achadinhos em <mark>Destaque</mark></h2>
+                <p>Os queridinhos da nossa comunidade nesta semana</p>
+            </div>
+            <div class="trending-grid">
+                <div class="trending-card">
+                    <img src="inflador balao.webp" class="trending-img" alt="Produto 1">
+                    <h4>Inflador de Balões Premium</h4>
+                    <div class="price-box">R$ 149,90</div>
+                    <a href="produtos.html" class="nav-link" style="border: 1px solid #eee;">Ver Detalhes</a>
+                </div>
+                <div class="trending-card">
+                    <img src="https://via.placeholder.com/240/FF5722/ffffff?text=Decor+1" class="trending-img" alt="Produto 2">
+                    <h4>Kit Decoração Minimalista</h4>
+                    <div class="price-box">R$ 45,90</div>
+                    <a href="produtos.html" class="nav-link" style="border: 1px solid #eee;">Ver Detalhes</a>
+                </div>
+                <div class="trending-card">
+                    <img src="https://via.placeholder.com/240/333333/ffffff?text=Tech+1" class="trending-img" alt="Produto 3">
+                    <h4>Gadget Tech do Mês</h4>
+                    <div class="price-box">R$ 89,00</div>
+                    <a href="produtos.html" class="nav-link" style="border: 1px solid #eee;">Ver Detalhes</a>
+                </div>
+                <div class="trending-card">
+                    <img src="https://via.placeholder.com/240/FF8A65/ffffff?text=Home+1" class="trending-img" alt="Produto 4">
+                    <h4>Organizador Inteligente</h4>
+                    <div class="price-box">R$ 29,90</div>
+                    <a href="produtos.html" class="nav-link" style="border: 1px solid #eee;">Ver Detalhes</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="section-header">
+                <h2 style="color: white;">O que dizem nossos <mark>Seguidores</mark></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-item">
+                    <p>"Sempre tive receio de comprar na Shopee, mas as indicações da NoDesconto são certeiras. Já economizei muito!"</p>
+                    <div class="testimonial-user">
+                        <div class="user-avatar">MA</div>
+                        <div>
+                            <strong>Mariana Almeida</strong><br>
+                            <small style="color: #888;">Compradora VIP</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Os produtos chegam super rápido e a qualidade é exatamente o que mostram aqui. Nota 10!"</p>
+                    <div class="testimonial-user">
+                        <div class="user-avatar">RC</div>
+                        <div>
+                            <strong>Ricardo Costa</strong><br>
+                            <small style="color: #888;">Seguidor desde 2023</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3 style="color: var(--laranja-principal); margin-bottom: 20px;">Sobre Nós</h3>
+                <p>A NoDesconto Store é sua parceira ideal para encontrar os melhores achadinhos da internet com curadoria especial.</p>
+            </div>
+            <div class="footer-section">
+                <h3 style="color: var(--laranja-principal); margin-bottom: 20px;">Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 style="color: var(--laranja-principal); margin-bottom: 20px;">Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/nodesconto.store" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 <b>NoDesconto Store</b>. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="#" class="float-wa">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navlist').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

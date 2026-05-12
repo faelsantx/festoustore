@@ -3,235 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos | Festou Store</title>
+    <title>Produtos | NoDesconto Store</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" type="image/png" href="festou.png">
+    <link rel="icon" type="image/png" href="NoDesconto.png">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
-    <header>
-        <div class="balloons-decoration">
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-        </div>
-        <div class="logo-text">
-            <span>F</span><span>E</span><span>S</span><span>T</span><span>O</span><span>U</span>
-        </div>
-        <span class="store-tag">STORE</span>
-    </header>
+<body class="dark-mode-page">
 
     <nav>
-        <div class="nav-list">
-            <div class="nav-item">
-                <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Início</a>
+        <div class="nav-container">
+            <div class="logo-container">
+                <a href="index.html" class="logo-text-link">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="logo-text-wrapper">
+                        NODESCONTO<span>STORE</span>
+                    </div>
+                </a>
             </div>
-            <div class="nav-item">
-                <a href="produtos.html" class="nav-link"><i class="fa-solid fa-magnifying-glass"></i> Produtos</a>
-            </div>
-            <div class="nav-item">
-                <a href="#sobre" class="nav-link"><i class="fa-solid fa-user"></i> Sobre Nós</a>
-            </div>
-            <div class="nav-item">
-                <a href="#contato" class="nav-link"><i class="fa-solid fa-phone"></i> Contato</a>
+
+            <div class="nav-options">
+                <button class="mobile-menu-btn" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="nav-list" id="navlist">
+                    <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Início</a>
+                    <a href="produtos.html" class="nav-link active"><i class="fa-solid fa-magnifying-glass"></i> Produtos</a>
+                    <a href="index.html#sobre" class="nav-link"><i class="fa-solid fa-user"></i> Sobre</a>
+                    <a href="index.html#contato" class="nav-link"><i class="fa-solid fa-phone"></i> Contato</a>
+                </div>
             </div>
         </div>
     </nav>
 
+    <div class="gradient-strip"></div>
+
     <main class="products-section">
-        <div class="section-title">
-            <h2>Nossos <mark>Achadinhos</mark></h2>
-            <p>Os melhores produtos para sua festa selecionados com carinho.</p>
+        <div class="section-header">
+            <div class="trust-badge" style="margin-bottom: 10px;">
+                <i class="fa-solid fa-star"></i> Melhores Achadinhos
+            </div>
+            <h2>Nossa <mark>Seleção</mark></h2>
+            <p>Produtos testados e aprovados com o melhor custo-benefício da Shopee.</p>
         </div>
 
-        <div class="product-grid">
+        <div class="trending-grid">
             <!-- Produto 1 -->
-            <div class="product-card" id="prod-1">
-                <div class="product-carousel">
-                    <button class="carousel-btn prev" onclick="moveCarousel('prod-1', -1, event)">&#10094;</button>
-                    <div class="carousel-container" onclick="openModal('prod-1')">
-                        <img src="inflador balao.webp" alt="Inflador Elétrico de Balões 1">
-                        <img src="inflador balao2.webp" alt="Inflador Elétrico de Balões 2">
+            <div class="trending-card" id="prod-1">
+                <div class="product-media-wrapper" style="position: relative; overflow: hidden; border-radius: 15px;">
+                    <img src="inflador balao.webp" class="trending-img active" alt="Inflador 1" onclick="openModal('prod-1')">
+                    <img src="inflador balao2.webp" class="trending-img" alt="Inflador 2" style="display:none;" onclick="openModal('prod-1')">
+                    
+                    <div class="mini-carousel-nav" style="position: absolute; bottom: 10px; left: 0; width: 100%; display: flex; justify-content: center; gap: 5px;">
+                        <span class="dot active" style="width: 8px; height: 8px; border-radius: 50%; background: var(--laranja-principal);"></span>
+                        <span class="dot" style="width: 8px; height: 8px; border-radius: 50%; background: #444;"></span>
                     </div>
-                    <button class="carousel-btn next" onclick="moveCarousel('prod-1', 1, event)">&#10095;</button>
                 </div>
-                <div class="product-info">
-                    <h3>Inflador Elétrico de Balões</h3>
-                    <p>Inflador Elétrico de Balões Bexigas 110v/220v Festa Ornamentação Bomba de Encher Bola de Festas，com 2 Bicos，Bomba infláv</p>
-                </div>
-                <div class="product-action">
-                    <div class="price">R$ 149,90</div>
-                    <a href="#" class="btn-shopee">Ver na Shopee</a>
-                </div>
+                
+                <h4 style="margin-top: 15px;">Inflador Elétrico de Balões</h4>
+                <p style="font-size: 0.85rem; color: #888; margin-bottom: 15px;">Potente, bivolt e perfeito para decorações profissionais.</p>
+                
+                <div class="price-box">R$ 149,90</div>
+                <a href="#" class="cta-button" style="padding: 12px 25px; width: 100%; justify-content: center; font-size: 0.85rem;">
+                    Ver na Shopee <i class="fa-solid fa-up-right-from-square"></i>
+                </a>
             </div>
 
             <!-- Produto 2 -->
-            <div class="product-card" id="prod-2">
-                <div class="product-carousel">
-                    <button class="carousel-btn prev" onclick="moveCarousel('prod-2', -1, event)">&#10094;</button>
-                    <div class="carousel-container" onclick="openModal('prod-2')">
-                        <img src="https://via.placeholder.com/150/4cc9f0/ffffff?text=Cortina+1" alt="Cortina Metalizada 1">
-                        <img src="https://via.placeholder.com/150/ff477e/ffffff?text=Cortina+2" alt="Cortina Metalizada 2">
-                    </div>
-                    <button class="carousel-btn next" onclick="moveCarousel('prod-2', 1, event)">&#10095;</button>
+            <div class="trending-card" id="prod-2">
+                <div class="product-media-wrapper" style="position: relative; overflow: hidden; border-radius: 15px;">
+                    <img src="https://via.placeholder.com/240/FF5722/ffffff?text=Produto+2" class="trending-img active" alt="Produto 2" onclick="openModal('prod-2')">
                 </div>
-                <div class="product-info">
-                    <h3>Cortina Metalizada</h3>
-                    <p>Ideal para painéis fotográficos e decoração de fundo. Tamanho 1x2 metros, disponível em várias cores metálicas vibrantes.</p>
-                </div>
-                <div class="product-action">
-                    <div class="price">R$ 12,50</div>
-                    <a href="#" class="btn-shopee">Ver na Shopee</a>
-                </div>
+                
+                <h4 style="margin-top: 15px;">Cortina Metalizada Premium</h4>
+                <p style="font-size: 0.85rem; color: #888; margin-bottom: 15px;">Brilho intenso para fundos de fotos e painéis festivos.</p>
+                
+                <div class="price-box">R$ 12,50</div>
+                <a href="#" class="cta-button" style="padding: 12px 25px; width: 100%; justify-content: center; font-size: 0.85rem;">
+                    Ver na Shopee <i class="fa-solid fa-up-right-from-square"></i>
+                </a>
             </div>
 
             <!-- Produto 3 -->
-            <div class="product-card" id="prod-3">
-                <div class="product-carousel">
-                    <button class="carousel-btn prev" onclick="moveCarousel('prod-3', -1, event)">&#10094;</button>
-                    <div class="carousel-container" onclick="openModal('prod-3')">
-                        <img src="https://via.placeholder.com/150/ffcf40/000000?text=Balão+1" alt="Balão Metalizado 1">
-                        <img src="https://via.placeholder.com/150/ff8a3d/ffffff?text=Balão+2" alt="Balão Metalizado 2">
-                    </div>
-                    <button class="carousel-btn next" onclick="moveCarousel('prod-3', 1, event)">&#10095;</button>
+            <div class="trending-card" id="prod-3">
+                <div class="product-media-wrapper" style="position: relative; overflow: hidden; border-radius: 15px;">
+                    <img src="https://via.placeholder.com/240/333333/ffffff?text=Produto+3" class="trending-img active" alt="Produto 3" onclick="openModal('prod-3')">
                 </div>
-                <div class="product-info">
-                    <h3>Balão Metalizado Números</h3>
-                    <p>Balões de números grandes (40cm) em dourado ou prata. Perfeito para aniversários e comemorações especiais.</p>
-                </div>
-                <div class="product-action">
-                    <div class="price">R$ 7,90</div>
-                    <a href="#" class="btn-shopee">Ver na Shopee</a>
-                </div>
+                
+                <h4 style="margin-top: 15px;">Kit Iluminação RGB</h4>
+                <p style="font-size: 0.85rem; color: #888; margin-bottom: 15px;">Controle por app e sincronização com música.</p>
+                
+                <div class="price-box">R$ 67,90</div>
+                <a href="#" class="cta-button" style="padding: 12px 25px; width: 100%; justify-content: center; font-size: 0.85rem;">
+                    Ver na Shopee <i class="fa-solid fa-up-right-from-square"></i>
+                </a>
             </div>
 
             <!-- Produto 4 -->
-            <div class="product-card" id="prod-4">
-                <div class="product-carousel">
-                    <button class="carousel-btn prev" onclick="moveCarousel('prod-4', -1, event)">&#10094;</button>
-                    <div class="carousel-container" onclick="openModal('prod-4')">
-                        <img src="https://via.placeholder.com/150/7ed321/ffffff?text=Painel+1" alt="Painel Redondo 1">
-                    </div>
-                    <button class="carousel-btn next" onclick="moveCarousel('prod-4', 1, event)">&#10095;</button>
+            <div class="trending-card" id="prod-4">
+                <div class="product-media-wrapper" style="position: relative; overflow: hidden; border-radius: 15px;">
+                    <img src="https://via.placeholder.com/240/FF8A65/ffffff?text=Produto+4" class="trending-img active" alt="Produto 4" onclick="openModal('prod-4')">
                 </div>
-                <div class="product-info">
-                    <h3>Capa para Painel Redondo</h3>
-                    <p>Tecido em helanca premium que não amassa. Diversos temas e cores sólidas para deixar sua festa impecável.</p>
-                </div>
-                <div class="product-action">
-                    <div class="price">R$ 35,00</div>
-                    <a href="#" class="btn-shopee">Ver na Shopee</a>
-                </div>
-            </div>
-
-            <!-- Produto 5 -->
-            <div class="product-card" id="prod-5">
-                <div class="product-carousel">
-                    <button class="carousel-btn prev" onclick="moveCarousel('prod-5', -1, event)">&#10094;</button>
-                    <div class="carousel-container" onclick="openModal('prod-5')">
-                        <img src="https://via.placeholder.com/150/00d4ff/ffffff?text=LED+1" alt="Letreiro LED 1">
-                        <img src="https://via.placeholder.com/150/ffffff/00d4ff?text=LED+2" alt="Letreiro LED 2">
-                    </div>
-                    <button class="carousel-btn next" onclick="moveCarousel('prod-5', 1, event)">&#10095;</button>
-                </div>
-                <div class="product-info">
-                    <h3>Letreiro Neon Happy Birthday</h3>
-                    <p>Iluminação LED neon para decorar o fundo da mesa. Baixo consumo de energia e alto impacto visual para fotos.</p>
-                </div>
-                <div class="product-action">
-                    <div class="price">R$ 89,90</div>
-                    <a href="#" class="btn-shopee">Ver na Shopee</a>
-                </div>
-            </div>
-
-            <!-- Produto 6 -->
-            <div class="product-card" id="prod-6">
-                <div class="product-carousel">
-                    <button class="carousel-btn prev" onclick="moveCarousel('prod-6', -1, event)">&#10094;</button>
-                    <div class="carousel-container" onclick="openModal('prod-6')">
-                        <img src="https://via.placeholder.com/150/ff477e/ffffff?text=Doces+1" alt="Kit Suporte Doces 1">
-                    </div>
-                    <button class="carousel-btn next" onclick="moveCarousel('prod-6', 1, event)">&#10095;</button>
-                </div>
-                <div class="product-info">
-                    <h3>Kit Suporte para Doces</h3>
-                    <p>Conjunto com 3 bandejas de alturas diferentes em ABS resistente. Fácil de montar e lavar após a festa.</p>
-                </div>
-                <div class="product-action">
-                    <div class="price">R$ 42,00</div>
-                    <a href="#" class="btn-shopee">Ver na Shopee</a>
-                </div>
+                
+                <h4 style="margin-top: 15px;">Organizador Multiuso</h4>
+                <p style="font-size: 0.85rem; color: #888; margin-bottom: 15px;">Maximize o espaço do seu closet com elegância.</p>
+                
+                <div class="price-box">R$ 29,90</div>
+                <a href="#" class="cta-button" style="padding: 12px 25px; width: 100%; justify-content: center; font-size: 0.85rem;">
+                    Ver na Shopee <i class="fa-solid fa-up-right-from-square"></i>
+                </a>
             </div>
         </div>
-
     </main>
 
     <!-- Modal para zoom da imagem -->
     <div id="imageModal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content" style="background: var(--preto-card); border: 1px solid var(--cinza-borda);">
             <span class="close-modal" onclick="closeModal()">&times;</span>
-            <button class="modal-btn prev" onclick="moveModalCarousel(-1)">&#10094;</button>
-            <img id="modalImg" src="" alt="Zoom do Produto">
-            <button class="modal-btn next" onclick="moveModalCarousel(1)">&#10095;</button>
+            <img id="modalImg" src="" alt="Zoom do Produto" style="border-radius: 15px;">
+            <div id="modalPrice" class="price-box" style="margin-top: 20px;"></div>
         </div>
     </div>
 
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Sobre Nós</h3>
+                <p>A NoDesconto Store é sua parceira ideal para encontrar os melhores achadinhos da internet com curadoria especial.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/nodesconto.store" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 <b>NoDesconto Store</b>. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="#" class="float-wa">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
     <script>
-        const carouselStates = {};
-        let currentModalProductId = null;
-
-        function moveCarousel(productId, direction, event) {
-            if (event) event.stopPropagation();
-            
-            if (!carouselStates[productId]) {
-                carouselStates[productId] = 0;
-            }
-
-            const card = document.getElementById(productId);
-            const container = card.querySelector('.carousel-container');
-            const images = container.querySelectorAll('img');
-            const totalImages = images.length;
-
-            if (totalImages <= 1 && direction !== 0) return;
-
-            carouselStates[productId] = (carouselStates[productId] + direction + totalImages) % totalImages;
-            
-            const offset = carouselStates[productId] * 150;
-            container.style.transform = `translateX(-${offset}px)`;
+        function toggleMenu() {
+            document.getElementById('navlist').classList.toggle('active');
         }
 
         function openModal(productId) {
-            currentModalProductId = productId;
             const card = document.getElementById(productId);
-            const container = card.querySelector('.carousel-container');
-            const images = container.querySelectorAll('img');
+            const img = card.querySelector('.trending-img.active');
+            const price = card.querySelector('.price-box').innerText;
             
-            if (!carouselStates[productId]) carouselStates[productId] = 0;
-            
-            const currentImgSrc = images[carouselStates[productId]].src;
-            document.getElementById('modalImg').src = currentImgSrc;
+            document.getElementById('modalImg').src = img.src;
+            document.getElementById('modalPrice').innerText = price;
             document.getElementById('imageModal').style.display = 'flex';
         }
 
         function closeModal() {
             document.getElementById('imageModal').style.display = 'none';
-            currentModalProductId = null;
-        }
-
-        function moveModalCarousel(direction) {
-            if (!currentModalProductId) return;
-            
-            moveCarousel(currentModalProductId, direction);
-            
-            const card = document.getElementById(currentModalProductId);
-            const container = card.querySelector('.carousel-container');
-            const images = container.querySelectorAll('img');
-            document.getElementById('modalImg').src = images[carouselStates[currentModalProductId]].src;
         }
 
         window.onclick = function(event) {
@@ -241,13 +183,9 @@
             }
         }
 
-        // Fechar modal ao apertar a tecla ESC
         document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape") {
-                closeModal();
-            }
+            if (event.key === "Escape") closeModal();
         });
     </script>
-
 </body>
 </html>

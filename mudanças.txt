@@ -1,4 +1,0 @@
-mudar a linha divisoria do menu de seleção
-colocar borda nas divs do produto
-melhorar a resposividade e colocar menu de tres opções pro mobile
-colocar barra de pesquisa
